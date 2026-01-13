@@ -12,11 +12,18 @@ const CTASection = () => {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-md font-medium flex items-center justify-center gap-2">
+          {/* Register as Donor (Google Form) */}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc_iyAzbfibRQ40wpaRllLAOahTCtuT0NC2DeOEQoF3WXNNZw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-md font-medium flex items-center justify-center gap-2"
+          >
             Register as Donor
             <span>→</span>
-          </button>
+          </a>
 
+          {/* View Our Work */}
           <button className="border border-gray-400 hover:border-white transition text-white px-6 py-3 rounded-md font-medium">
             View Our Work
           </button>

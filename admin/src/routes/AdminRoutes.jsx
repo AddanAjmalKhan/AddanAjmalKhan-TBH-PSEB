@@ -4,6 +4,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Users from "../pages/dashboard/Users";
 import Donors from "../pages/dashboard/Donors";
 import Reports from "../pages/dashboard/Reports";
+import BloodRequests from "../pages/dashboard/BloodRequests"; // import here
 import Settings from "../pages/dashboard/Settings";
 import Logout from "../pages/dashboard/Logout";
 import ProtectedRoute from "../components/common/ProtectedRoute";
@@ -30,6 +31,7 @@ const AdminRoutes = () => {
         <Route path="/users" element={<Users />} />
         <Route path="/donors" element={<Donors />} />
         <Route path="/reports" element={<Reports />} />
+        <Route path="/blood-requests" element={<BloodRequests />} /> {/* NEW */}
         <Route path="/settings" element={<Settings />} />
         <Route path="/logout" element={<Logout />} />
       </Route>

@@ -1,6 +1,6 @@
+import React from "react";
 import blog1 from "../../assets/blog/blog-1.jpg";
 import blog2 from "../../assets/blog/blog-2.jpg";
-
 
 const blogs = [
   {
@@ -23,41 +23,32 @@ const blogs = [
 
 const BlogSection = () => {
   return (
-    <section className="w-full bg-[#FFF1F2] py-16">
-
-
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Section Title */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-10">
+    <section className="w-full bg-[#FFF1F2] py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
           Latest Blogs
         </h2>
 
-        {/* Blog List */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {blogs.map((blog) => (
             <div
               key={blog.id}
               className="flex flex-col md:flex-row border border-gray-200 rounded-lg overflow-hidden"
             >
-              {/* Text Content */}
-              <div className="flex-1 p-6">
-                <h3 className="text-xl font-semibold text-red-600 mb-2">
+              <div className="flex-1 p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-semibold text-red-600 mb-1">
                   {blog.title}
                 </h3>
-
-                <p className="text-sm text-gray-500 mb-3">{blog.date}</p>
-
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-xs md:text-sm text-gray-500 mb-2">{blog.date}</p>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                   {blog.description}
                 </p>
-
-                <button className="mt-4 text-red-600 font-semibold hover:underline">
+                <button className="mt-3 text-red-600 font-semibold hover:underline text-sm md:text-base">
                   Read More →
                 </button>
               </div>
 
-              {/* Image */}
-              <div className="md:w-64 w-full h-56 md:h-auto">
+              <div className="md:w-48 w-full h-40 md:h-auto">
                 <img
                   src={blog.image}
                   alt={blog.title}

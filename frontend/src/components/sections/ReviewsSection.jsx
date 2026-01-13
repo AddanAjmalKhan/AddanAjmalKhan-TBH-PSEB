@@ -1,75 +1,69 @@
-import user1 from "../../assets/reviews/user-1.png";
-import user2 from "../../assets/reviews/user-2.png";
-import user3 from "../../assets/reviews/user-3.png";
-import user4 from "../../assets/reviews/user-4.png";
-
 const reviews = [
   {
-    name: "SARAH",
-    text: "Great initiative! The process was simple and the team was very responsive.",
-    image: user1,
-    dark: false,
+    name: "Muhammad Bilal Qayyum",
+    text:
+      "The best helping platform I have ever seen. May Allah bless everyone involved in this noble cause.",
   },
   {
-    name: "SAAD",
-    text: "I found a donor quickly through this website. Truly lifesaving work.",
-    image: user2,
-    dark: true,
+    name: "Saba Writes",
+    text:
+      "I highly recommend The Blood Heroes for their incredible dedication and selfless service. They are true lifesavers who work tirelessly to help those in need. The team’s efforts truly deserve appreciation and support from everyone.",
   },
   {
-    name: "ALI",
-    text: "Amazing platform that connects donors and patients seamlessly.",
-    image: user3,
-    dark: false,
+    name: "Waisu Awan",
+    text:
+      "I highly recommend The Blood Heroes KPK. It is an amazing initiative that saves countless lives through selfless blood donation.",
   },
   {
-    name: "AYESHA",
-    text: "The Blood Heroes made donating blood so easy and meaningful.",
-    image: user4,
-    dark: true,
+    name: "Saifullah",
+    text: "They are real national heroes.",
+  },
+  {
+    name: "Furrat Waseem",
+    text:
+      "Together for a cause — supporting thalassemia and cancer patients with compassion and dedication.",
   },
 ];
 
 const ReviewsSection = () => {
   return (
-    <section className="w-full bg-red-800 py-12">
+    <section className="w-full bg-gray-50 py-16">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Small white line */}
-        <div className="w-16 h-1 bg-white mx-auto mb-4 rounded"></div>
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <div className="w-14 h-1 bg-red-700 mx-auto mb-4 rounded"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-wide">
+            What People Say
+          </h2>
+          <p className="text-gray-600 mt-3 max-w-xl mx-auto text-sm md:text-base">
+            Genuine words from people who believe in The Blood Heroes mission
+          </p>
+        </div>
 
-        {/* Section Title */}
-        <h2 className="text-white text-3xl md:text-4xl font-bold text-center tracking-wider mb-12">
-          REVIEWS
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Reviews Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className={`rounded-xl p-4 shadow-lg max-w-md transition-transform duration-300 hover:scale-105 ${
-                review.dark ? "bg-gray-900 text-white" : "bg-white text-gray-800"
-              }`}
-              style={{
-                marginLeft:
-                  review.dark ? "auto" : "0", // dark cards right
-                marginRight:
-                  review.dark ? "0" : "auto", // white cards left
-                textAlign: review.dark ? "right" : "left",
-              }}
+              className="
+                bg-white rounded-2xl p-6
+                border border-red-700/30
+                hover:border-red-700
+                shadow-md hover:shadow-xl
+                transition-all duration-300
+              "
             >
-              <p className="text-sm leading-relaxed mb-3">{`“${review.text}”`}</p>
+              {/* Review Text */}
+              <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                “{review.text}”
+              </p>
 
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-sm">{review.name}</p>
-                  <div className="text-yellow-400 text-xs">★★★★★</div>
-                </div>
-
-                <img
-                  src={review.image}
-                  alt={review.name}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-gray-300"
-                />
+              {/* Name & Rating */}
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-semibold text-gray-900 text-sm">
+                  {review.name}
+                </p>
+                <div className="text-yellow-400 text-xs mt-1">★★★★★</div>
               </div>
             </div>
           ))}

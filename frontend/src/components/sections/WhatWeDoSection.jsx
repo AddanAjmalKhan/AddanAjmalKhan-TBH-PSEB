@@ -10,75 +10,77 @@ import internship from "../../assets/what-we-do/internship.png";
 const activities = [
   {
     title: "Emergency Blood Provision",
-    desc: "Daily handling of blood requests across Pakistan",
+    desc: "Handling urgent blood requests daily across Pakistan with speed and care.",
     img: emergency,
   },
   {
     title: "Blood Donation Camps",
-    desc: "Organized regularly in universities, public spaces, and healthcare centres.",
+    desc: "Regularly organized in universities, public spaces, and healthcare centres.",
     img: donation,
   },
   {
     title: "Awareness Campaigns",
-    desc: "Ongoing seminars, digital media campaigns and college/university outreach.",
+    desc: "Educational seminars, digital outreach, and university awareness programs.",
     img: awareness,
   },
   {
     title: "Thalassemia Awareness",
-    desc: "Genetic testing awareness, counseling sessions & advocacy.",
+    desc: "Genetic testing awareness, counseling sessions, and patient advocacy.",
     img: thalassemia,
   },
   {
     title: "Disaster Response",
-    desc: "Blood relief drives during natural calamities & crises.",
+    desc: "Rapid blood relief drives during natural disasters and emergencies.",
     img: disaster,
   },
   {
-    title: "Internship Offers",
-    desc: "Internships for students of A-levels, BS & MS.",
+    title: "Internship Opportunities",
+    desc: "Structured internships for A-Level, BS, and MS students.",
     img: internship,
   },
 ];
 
 const WhatWeDoSection = () => {
   return (
-    <section className="bg-[#8b0000] py-20 px-6">
+    <section className="bg-gradient-to-b from-[#8b0000] to-[#6f0000] py-14 px-6">
       
       {/* Section Header */}
-      <div className="text-center mb-16">
-        {/* Small white line */}
-        <span className="inline-block w-12 h-1 bg-white rounded-full mb-4"></span>
+      <div className="text-center mb-12">
+        <span className="inline-block w-12 h-1 bg-white rounded-full mb-3"></span>
 
-        <h2 className="text-white text-4xl font-bold tracking-wide">
-          WHAT WE DO
+        <h2 className="text-2xl md:text-3xl font-bold tracking-wide">
+          What We Do
         </h2>
 
-        {/* Subtle glow divider (optional but beautiful) */}
-        <div className="mt-3 flex justify-center">
-          <span className="w-24 h-px bg-white/40"></span>
-        </div>
+        <p className="text-white/80 mt-3 max-w-2xl mx-auto text-sm">
+          Dedicated initiatives focused on saving lives, spreading awareness, and
+          building a healthier society.
+        </p>
       </div>
 
       {/* Cards */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {activities.map((item, index) => (
           <div
             key={index}
-            className="bg-[#a11212] rounded-2xl p-6 text-white
-                       hover:-translate-y-2 hover:shadow-2xl
+            className="bg-white rounded-2xl p-4 text-gray-900
+                       shadow-lg hover:shadow-2xl
+                       hover:-translate-y-1
                        transition-all duration-300 ease-out"
           >
-            <img
-              src={item.img}
-              alt={item.title}
-              className="w-full h-44 object-cover rounded-xl mb-5"
-            />
+            <div className="overflow-hidden rounded-xl mb-4">
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-36 object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
 
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-lg font-semibold mb-1 tracking-wide">
               {item.title}
             </h3>
 
-            <p className="text-sm leading-relaxed opacity-90">
+            <p className="text-sm leading-relaxed text-gray-700">
               {item.desc}
             </p>
           </div>
