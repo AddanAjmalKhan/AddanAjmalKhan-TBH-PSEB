@@ -1,5 +1,5 @@
 import React from "react";
-import childImg from "../../assets/vision/vision-child.png";
+import childImg from "../../assets/vision/vision.png";
 
 const VisionMissionSection = () => {
   return (

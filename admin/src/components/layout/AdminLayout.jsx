@@ -4,23 +4,23 @@ import Topbar from "../common/Topbar";
 
 const AdminLayout = () => {
   return (
-    <div className="flex bg-[#0B0F1A] text-white min-h-screen">
+    <div className="flex min-h-screen bg-[#0B0F1A] text-white overflow-hidden">
 
-      {/* FIXED SIDEBAR */}
-      <div className="h-screen sticky top-0">
+      {/* SIDEBAR (hidden on mobile) */}
+      <div className="hidden md:block h-screen sticky top-0 shrink-0">
         <Sidebar />
       </div>
 
       {/* MAIN AREA */}
-      <div className="flex-1 flex flex-col h-screen">
+      <div className="flex-1 flex flex-col min-w-0">
 
-        {/* FIXED TOPBAR */}
+        {/* TOPBAR */}
         <Topbar />
 
         {/* PAGE CONTENT */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 sm:p-6">
           <Outlet />
-        </div>
+        </main>
 
       </div>
     </div>

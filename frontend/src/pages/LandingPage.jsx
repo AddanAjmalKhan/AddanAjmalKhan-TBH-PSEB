@@ -6,39 +6,28 @@ import StatsPartnersSection from "../components/sections/StatsPartnersSection";
 import WhatWeDoSection from "../components/sections/WhatWeDoSection";
 import FoundersSection from "../components/sections/FoundersSection";
 import CTASection from "../components/sections/CTASection";
-import Header from "../components/layout/Header";
 import Hero from "../components/sections/Hero";
-import Footer from "../components/layout/Footer";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <main className="flex-grow">
+      <Hero />
 
-      {/* Main Content */}
-      <main className="flex-grow">
-        <Hero />
+      <FoundersSection />
 
-        <FoundersSection />
+      <WhatWeDoSection />
 
-        <WhatWeDoSection />
+      <VisionMissionSection />
 
-        {/* Vision & Mission */}
-        <VisionMissionSection />
+      <StatsPartnersSection />
 
-        {/* Stats + Partners */}
-        <StatsPartnersSection />
+      <BlogSection />
 
-        <BlogSection />
-        <ContactSection />
+      <ContactSection />
 
-        <ReviewsSection />
+      <ReviewsSection />
 
-        {/* CTA */}
-        <CTASection />
-
-      </main>
- <Footer />
-    </div>
+      <CTASection />
+    </main>
   );
 }

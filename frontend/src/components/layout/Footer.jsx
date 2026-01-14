@@ -43,9 +43,9 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-3 md:mb-4 text-sm md:text-base">Contact Us</h4>
           <ul className="space-y-2 text-xs md:text-sm">
-            <li>📍 Pakistan</li>
-            <li>📞 +92 **********</li>
-            <li>✉️ help@bloodheroes.org</li>
+            <li>📍 Jail Road Mardan, near Mardan Central Jail, District Mardan Pakistan</li>
+            <li>📞 +92 342 5335680</li>
+            <li>✉️ thebloodheroescampaign@gmail.com</li>
           </ul>
         </div>
       </div>

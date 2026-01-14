@@ -45,18 +45,19 @@ const WhatWeDoSection = () => {
     <section className="bg-gradient-to-b from-[#8b0000] to-[#6f0000] py-14 px-6">
       
       {/* Section Header */}
-      <div className="text-center mb-12">
-        <span className="inline-block w-12 h-1 bg-white rounded-full mb-3"></span>
+<div className="text-center mb-12">
+  <span className="inline-block w-12 h-1 bg-white rounded-full mb-3"></span>
 
-        <h2 className="text-2xl md:text-3xl font-bold tracking-wide">
-          What We Do
-        </h2>
+  <h2 className="text-2xl md:text-3xl font-bold tracking-wide text-white">
+    What We Do
+  </h2>
 
-        <p className="text-white/80 mt-3 max-w-2xl mx-auto text-sm">
-          Dedicated initiatives focused on saving lives, spreading awareness, and
-          building a healthier society.
-        </p>
-      </div>
+  <p className="text-white/80 mt-3 max-w-2xl mx-auto text-sm">
+    Dedicated initiatives focused on saving lives, spreading awareness, and
+    building a healthier society.
+  </p>
+</div>
+
 
       {/* Cards */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">

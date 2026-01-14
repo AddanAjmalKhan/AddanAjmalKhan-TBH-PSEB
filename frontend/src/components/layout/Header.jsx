@@ -1,34 +1,51 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Home, Image, Droplet, Phone, Menu, X } from "lucide-react";
 import logo from "../../assets/logo.png";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { label: "Home", icon: <Home size={16} />, active: true },
-    { label: "Gallery", icon: <Image size={16} /> },
-    { label: "Donate Blood", icon: <Droplet size={16} /> },
-    { label: "Request Blood", icon: <Droplet size={16} /> },
-    { label: "Contact us", icon: <Phone size={16} /> },
+    { label: "Home", icon: <Home size={16} />, path: "/" },
+    { label: "Gallery", icon: <Image size={16} />, path: "/gallery" },
+    { label: "Donate Blood", icon: <Droplet size={16} />, path: "#" },
+    { label: "Request Blood", icon: <Droplet size={16} />, path: "#" },
+    { label: "Contact us", icon: <Phone size={16} />, path: "#contact" },
   ];
 
   return (
     <header className="bg-white border-b shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="The Blood Heroes Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="The Blood Heroes Logo"
+            className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+          />
           <div className="flex flex-col">
-            <h1 className="text-primary font-bold text-xs sm:text-sm">THE BLOOD HEROES</h1>
-            <p className="text-gray-500 text-[10px] sm:text-xs">Every Pint Matters</p>
+            <h1 className="text-primary font-bold text-xs sm:text-sm">
+              THE BLOOD HEROES
+            </h1>
+            <p className="text-gray-500 text-[10px] sm:text-xs">
+              Every Pint Matters
+            </p>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden sm:flex items-center gap-2">
           {navItems.map((item, index) => (
-            <NavItem key={index} icon={item.icon} label={item.label} active={item.active} />
+            <NavItem
+              key={index}
+              icon={item.icon}
+              label={item.label}
+              to={item.path}
+              active={location.pathname === item.path}
+            />
           ))}
         </nav>
 
@@ -45,7 +62,14 @@ export default function Header() {
       {mobileMenuOpen && (
         <nav className="sm:hidden bg-white border-t border-gray-200 px-4 py-2 flex flex-col gap-2">
           {navItems.map((item, index) => (
-            <NavItem key={index} icon={item.icon} label={item.label} active={item.active} mobile />
+            <NavItem
+              key={index}
+              icon={item.icon}
+              label={item.label}
+              to={item.path}
+              active={location.pathname === item.path}
+              mobile
+            />
           ))}
         </nav>
       )}
@@ -53,15 +77,16 @@ export default function Header() {
   );
 }
 
-function NavItem({ icon, label, active, mobile }) {
+function NavItem({ icon, label, to, active, mobile }) {
   return (
-    <button
-      className={`flex items-center gap-2 px-3 py-1 rounded-full transition text-sm sm:text-sm
+    <Link
+      to={to}
+      className={`flex items-center gap-2 px-3 py-1 rounded-full transition text-sm
         ${active ? "bg-red-600 text-white" : "text-gray-600 hover:bg-gray-100"}
         ${mobile ? "justify-start w-full" : ""}`}
     >
       {icon}
-      <span className="truncate">{label}</span>
-    </button>
+      <span>{label}</span>
+    </Link>
   );
 }

@@ -7,7 +7,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Twitter,
 } from "lucide-react";
 
 export default function ContactSection() {
@@ -61,21 +60,42 @@ export default function ContactSection() {
           <div className="w-12 h-1 bg-primary mt-2 mb-6"></div>
 
           <div className="space-y-4 md:space-y-6">
-            <InfoItem icon={<Home size={18} />} text="3100 C/A Mouchak, Sylhet, Bangladesh" />
-            <InfoItem icon={<Phone size={18} />} text="+093-120-525-9162" />
-            <InfoItem icon={<Mail size={18} />} text="query@yourdomain.com" />
-            <InfoItem icon={<Globe size={18} />} text="www.yourdomain.com" />
+            <InfoItem
+              icon={<Home size={18} />}
+              text="Jail Road Mardan, near Mardan Central Jail, District Mardan"
+            />
+            <InfoItem
+              icon={<Phone size={18} />}
+              text="+92 342 5335680"
+            />
+            <InfoItem
+              icon={<Mail size={18} />}
+              text="thebloodheroescampaign@gmail.com"
+            />
           </div>
 
           <h3 className="text-gray-700 text-lg md:text-xl font-semibold uppercase mt-10">
             We Are Social
           </h3>
           <div className="w-12 h-1 bg-primary mt-2 mb-4"></div>
+
           <div className="flex gap-3 md:gap-4">
-            <SocialIcon icon={<Facebook />} />
-            <SocialIcon icon={<Instagram />} />
-            <SocialIcon icon={<Linkedin />} />
-            <SocialIcon icon={<Twitter />} />
+            <SocialIcon
+              icon={<Facebook />}
+              link="https://www.facebook.com/share/1FWsfAkU4m/"
+            />
+            <SocialIcon
+              icon={<Instagram />}
+              link="https://www.instagram.com/thebloodheroes"
+            />
+            <SocialIcon
+              icon={<Linkedin />}
+              link="https://www.linkedin.com/company/the-blood-heroes-campaign/"
+            />
+            <SocialIcon
+              icon={<Globe />}
+              link="https://www.threads.com/@thebloodheroes"
+            />
           </div>
         </div>
 
@@ -95,10 +115,15 @@ function InfoItem({ icon, text }) {
   );
 }
 
-function SocialIcon({ icon }) {
+function SocialIcon({ icon, link }) {
   return (
-    <div className="bg-primary text-white p-3 md:p-4 hover:bg-darkRed transition cursor-pointer rounded">
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-primary text-white p-3 md:p-4 hover:bg-darkRed transition cursor-pointer rounded"
+    >
       {icon}
-    </div>
+    </a>
   );
 }
