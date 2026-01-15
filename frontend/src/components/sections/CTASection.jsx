@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CTASection = () => {
   return (
     <section className="relative bg-gradient-to-b from-[#0B1220] to-[#0E1627] py-24 px-6 text-center">
@@ -7,12 +9,12 @@ const CTASection = () => {
         </h2>
 
         <p className="mt-4 text-gray-400 text-sm md:text-base">
-          There is a constant need for regular blood supply because blood can be stored
-          for only a limited time before use.
+          There is a constant need for regular blood supply because blood can be
+          stored for only a limited time before use.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          {/* Register as Donor (Google Form) */}
+          {/* Register as Donor */}
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSc_iyAzbfibRQ40wpaRllLAOahTCtuT0NC2DeOEQoF3WXNNZw/viewform"
             target="_blank"
@@ -23,10 +25,13 @@ const CTASection = () => {
             <span>→</span>
           </a>
 
-          {/* View Our Work */}
-          <button className="border border-gray-400 hover:border-white transition text-white px-6 py-3 rounded-md font-medium">
+          {/* View Our Work → Gallery */}
+          <Link
+            to="/gallery"
+            className="border border-gray-400 hover:border-white transition text-white px-6 py-3 rounded-md font-medium flex items-center justify-center"
+          >
             View Our Work
-          </button>
+          </Link>
         </div>
       </div>
     </section>

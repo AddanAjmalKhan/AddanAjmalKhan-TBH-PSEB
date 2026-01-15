@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 /* ================= Images ================= */
 // 1st Annual Summit
@@ -18,6 +18,11 @@ import summit11 from "../assets/gallery/summit11.jpg";
 import summit12 from "../assets/gallery/summit12.jpg";
 
 export default function GalleryPage() {
+  // Scroll to top when this page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const summits = [
     {
       title: "1st Annual Summit",
@@ -60,15 +65,7 @@ export default function GalleryPage() {
       host: "Team Karachi",
       date: "27–29 January 2024",
       venue: "Arts Council of Pakistan, Karachi",
-      images: [
-        summit6,
-        summit7,
-        summit8,
-        summit9,
-        summit10,
-        summit11,
-        summit12,
-      ],
+      images: [summit6, summit7, summit8, summit9, summit10, summit11, summit12],
       sponsors: [
         "Arts Council of Pakistan",
         "Squad International",
@@ -96,6 +93,7 @@ export default function GalleryPage() {
     },
   ];
 
+  // eslint-disable-next-line no-unused-vars
   const anniversaries = [
     {
       title: "3rd Anniversary",
@@ -118,23 +116,18 @@ export default function GalleryPage() {
         {/* ================= Page Header ================= */}
         <div className="relative mb-10">
           <div className="absolute inset-0 bg-gradient-to-b from-red-50/70 to-transparent rounded-3xl" />
-
           <div className="relative text-center py-20 px-6">
             <div className="w-20 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
-
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
               OUR <span className="text-red-600">JOURNEY</span> IN PICTURES
             </h1>
-
             <p className="text-gray-600 mt-6 max-w-2xl mx-auto leading-relaxed">
               A visual record of our events and impactful initiatives dedicated
               to saving lives across Pakistan.
             </p>
-
             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-6">
               Annual Summits <span className="text-red-600">&</span> Anniversaries
             </h2>
-
             <div className="mt-10 flex justify-center">
               <span className="h-px w-32 bg-gradient-to-r from-transparent via-red-200 to-transparent" />
             </div>
@@ -151,24 +144,15 @@ export default function GalleryPage() {
           </div>
 
           {summits.map((event, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl shadow-md p-10 mb-16"
-            >
+            <div key={index} className="bg-white rounded-3xl shadow-md p-10 mb-16">
               <h3 className="text-2xl font-extrabold text-gray-900">
                 {event.title}
               </h3>
 
               <div className="flex flex-wrap gap-3 mt-4 text-sm mb-8">
-                <span className="px-4 py-1 bg-red-50 text-red-700 rounded-full">
-                  {event.host}
-                </span>
-                <span className="px-4 py-1 bg-gray-100 rounded-full">
-                  {event.date}
-                </span>
-                <span className="px-4 py-1 bg-gray-100 rounded-full">
-                  {event.venue}
-                </span>
+                <span className="px-4 py-1 bg-red-50 text-red-700 rounded-full">{event.host}</span>
+                <span className="px-4 py-1 bg-gray-100 rounded-full">{event.date}</span>
+                <span className="px-4 py-1 bg-gray-100 rounded-full">{event.venue}</span>
               </div>
 
               {/* Image Slider */}
@@ -180,16 +164,11 @@ export default function GalleryPage() {
                       src={img}
                       alt={`${event.title} ${i + 1}`}
                       loading="lazy"
-                      className="min-w-[280px] sm:min-w-[320px] h-56
-                                 object-cover rounded-2xl shadow-sm
-                                 snap-start"
+                      className="min-w-[280px] sm:min-w-[320px] h-56 object-cover rounded-2xl shadow-sm snap-start"
                     />
                   ))}
                 </div>
-
-                <p className="text-xs text-gray-400 mt-2 text-center">
-                  ← Scroll to view more →
-                </p>
+                <p className="text-xs text-gray-400 mt-2 text-center">← Scroll to view more →</p>
               </div>
 
               {/* Sponsors & Speakers */}
@@ -197,67 +176,15 @@ export default function GalleryPage() {
                 <div className="bg-gray-50 rounded-2xl p-6">
                   <h4 className="font-bold mb-4">Sponsors</h4>
                   <ul className="grid grid-cols-2 gap-y-2 text-sm">
-                    {event.sponsors.map((s, i) => (
-                      <li key={i}>• {s}</li>
-                    ))}
+                    {event.sponsors.map((s, i) => (<li key={i}>• {s}</li>))}
                   </ul>
                 </div>
-
                 <div className="bg-gray-50 rounded-2xl p-6">
                   <h4 className="font-bold mb-4">Speakers</h4>
                   <ul className="space-y-2 text-sm">
-                    {event.speakers.map((s, i) => (
-                      <li key={i}>• {s}</li>
-                    ))}
+                    {event.speakers.map((s, i) => (<li key={i}>• {s}</li>))}
                   </ul>
                 </div>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        {/* ================= Anniversaries ================= */}
-        <section>
-          <div className="flex items-center gap-4 mb-10 mt-20">
-            <span className="w-1.5 h-10 bg-red-600 rounded-full" />
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              Anniversaries
-            </h2>
-          </div>
-
-          {anniversaries.map((event, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl shadow-md p-10 mb-16"
-            >
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-4">
-                {event.title}
-              </h3>
-
-              <div className="flex flex-wrap gap-3 mb-8 text-sm">
-                <span className="px-4 py-1 bg-red-50 text-red-700 rounded-full">
-                  {event.host}
-                </span>
-                <span className="px-4 py-1 bg-gray-100 rounded-full">
-                  {event.date}
-                </span>
-                <span className="px-4 py-1 bg-gray-100 rounded-full">
-                  {event.venue}
-                </span>
-              </div>
-
-              <div className="flex gap-5 overflow-x-auto pb-4">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="min-w-[260px] sm:min-w-[300px] h-52
-                               bg-gray-100 rounded-2xl
-                               flex items-center justify-center
-                               text-gray-400 text-sm shadow-sm"
-                  >
-                    Anniversary Image {i}
-                  </div>
-                ))}
               </div>
             </div>
           ))}
